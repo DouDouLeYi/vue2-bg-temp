@@ -1,0 +1,66 @@
+{
+  "column": [
+    {
+      "type": "date",
+      "label": "活动时间1",
+      "span": 8,
+      "id": "date16",
+      "rules": [
+        { "required": true, "message": "请选择活动时间", "trigger": "change" }
+      ]
+    },
+    {
+      "type": "date",
+      "label": "活动时间2",
+      "span": 8,
+      "id": "date17",
+      "rules": [
+        { "required": true, "message": "请选择活动时间", "trigger": "change" }
+      ]
+    },
+    {
+      "type": "input",
+      "label": "活动名称",
+      "span": 8,
+      "id": "name",
+      "rules": [
+        { "required": true, "message": "请输入活动名称", "trigger": "change" }
+      ]
+    },
+    {
+      "type": "input",
+      "label": "活动区域",
+      "span": 8,
+      "id": "region",
+      "rules": [
+        { "required": true, "message": "请输入活动区域", "trigger": "change" }
+      ]
+    },
+    {
+      "type": "select",
+      "label": "选择",
+      "span": 8,
+      "id": "select34",
+      "options": [
+        { "label": "选项1", "value": "1" },
+        { "label": "选项2", "value": "2" }
+      ],
+      "rules": [
+        { "required": true, "message": "请选择", "trigger": "change" }
+      ]
+    },
+    {
+      "type": "input",
+      "label": "文本域",
+      "span": 24,
+      "otherParams": {
+        "rows": 4,
+        "type": "textarea"
+      },
+      "id": "name666",
+      "rules": [
+        { "required": true, "message": "请输入文本域", "trigger": "change" }
+      ]
+    }
+  ]
+}

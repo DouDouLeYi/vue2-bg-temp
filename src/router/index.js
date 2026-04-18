@@ -77,9 +77,9 @@ export const constantRoutes = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/SchemaRender/pageRender.vue'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '低代码', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -89,9 +89,9 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/documentation/index'),
+        component: () => import('@/views/drawerFuncPage/index'),
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: '函数式调用drawer', icon: 'documentation', affix: true }
       }
     ]
   },
