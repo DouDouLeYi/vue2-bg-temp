@@ -55,7 +55,7 @@ export default {
     // 宽度/高度（支持百分比或 px）
     size: {
       type: String,
-      default: '480px'
+      default: '90%'
     },
     // 方向：rtl / ltr / ttb / btt
     direction: {

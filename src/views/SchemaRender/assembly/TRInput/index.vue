@@ -5,6 +5,7 @@ import formMixin from '@/views/SchemaRender/mixins/formMixin'
 export default {
   name: 'TRInput',
   components: { BaseComponent },
+  mixins: [formMixin],
   props: {
     value: {
       type: [String, Number],
@@ -15,7 +16,6 @@ export default {
       default: () => {}
     }
   },
-  mixins: [formMixin],
   watch: {
     formData: {
       handler(newVal, oldVal) {
@@ -32,7 +32,7 @@ export default {
 
 <template>
   <BaseComponent v-bind="$attrs">
-    <el-input v-model="innerValue" placeholder="请输入" v-bind="$attrs.otherParams" />
+    <el-input v-model="innerValue" placeholder="请输入" v-bind="$attrs.otherOptions" />
   </BaseComponent>
 </template>
 

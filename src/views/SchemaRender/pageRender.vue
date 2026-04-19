@@ -10,18 +10,25 @@
       class="demo-ruleForm"
       style="flex: 1;padding: 0 20px"
     >
-      <template v-for="item in schema.column">
+      <template v-if="schema.mouldType">
+        <component
+          :is="renderComp(schema.mouldType,true)"
+          :form-data="formData"
+          v-bind="schema"
+        />
+      </template>
+      <template v-for="item in schema.column" v-else>
         <component
           :is="renderComp(item.type)"
           :key="item.id"
           v-model="formData[item.id]"
-          :formData="formData"
+          :form-data="formData"
           v-bind="item"
         />
       </template>
     </el-form>
     <!-- 按钮区域 -->
-    <div  class="buttonWrap">
+    <div v-if="schema.bottonColumn" class="buttonWrap">
       <el-button type="primary" @click="submitForm">立即创建</el-button>
       <el-button @click="resetForm">重置</el-button>
       <!--        <div id="app" @click="showSimple">点击简单提示</div>-->
@@ -33,14 +40,17 @@
 import { TRButton, BaseComponent, TRDate } from '@/views/SchemaRender/assembly'
 import TRInput from '@/views/SchemaRender/assembly/TRInput/index.vue'
 import { LayoutInfo } from '@/views/SchemaRender/mock/confMock'
-import { Assembly_FILIATION } from '@/views/SchemaRender/helper'
+import { Assembly_FILIATION, TEMPLATE_TYPE } from '@/views/SchemaRender/helper'
 
 export default {
   name: 'PageRender',
   components: { TRInput, TRDate, BaseComponent, TRButton },
   props: {
     userId: Number,
-    layoutId: String
+    layoutId: {
+      type: String,
+      default: '110'
+    }
   },
   data() {
     return {
@@ -50,7 +60,10 @@ export default {
   },
   computed: {
     renderComp() {
-      return (type) => {
+      return (type, isTemplate = false) => {
+        if (isTemplate) {
+          return TEMPLATE_TYPE[type]
+        }
         return Assembly_FILIATION[type]
       }
     }

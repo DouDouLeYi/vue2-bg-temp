@@ -31,7 +31,6 @@ export default {
       try {
         const formData = await this.$drawer({
           title: '编辑用户',
-          size: '600px',
           component: PageRender,
           componentProps: { userId: 456 }
           // showFooter: true // 显示底部确认/取消按钮
